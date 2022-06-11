@@ -118,7 +118,7 @@
                     title: {
                         text: 'Value',
                         margin: 80
-                    }r
+                    }
                 },
                 series: []
             });
