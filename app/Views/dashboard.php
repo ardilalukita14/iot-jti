@@ -22,7 +22,7 @@
         //mqtt connecton options including the mqtt broker subscriptions
         var options = {
             userName: "jti",//silakan disikan username dan password yang didaftarkan mqtt
-            password: "12345",
+            password: "123456",
             timeout: 3,
             useSSL: false,
             onSuccess: function() {
