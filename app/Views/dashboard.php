@@ -9,7 +9,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var MQTTbroker = '168.138.27.180';//servernya disesuaikan
+        var MQTTbroker = '168.138.23.97';//servernya disesuaikan
         var MQTTport = 8090; //sesuaikan port websockets messsage broker,
         var MQTTsubTopic = 'room/suhu'; //topiknya perlu disesuaikan
         var chart; // global variuable for chart
