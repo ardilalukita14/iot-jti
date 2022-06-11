@@ -109,7 +109,7 @@
                 },
                 xAxis: {
                     type: 'datetime',
-                    tickPixelInterval: 150,
+                    tickPixelInterval: 50,
                     maxZoom: 20 * 1000
                 },
                 yAxis: {
