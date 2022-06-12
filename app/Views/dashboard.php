@@ -99,7 +99,7 @@
             chart = new Highcharts.Chart({
                 chart: {
                     renderTo: 'container',
-                    defaultSeriesType: 'column'
+                    defaultSeriesType: 'solidgauge'
                 },
                 title: {
                     text: 'Dashboard IoT JTI - Suhu Live Websockets'
