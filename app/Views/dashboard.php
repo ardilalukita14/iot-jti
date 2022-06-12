@@ -11,7 +11,9 @@
     <script type="text/javascript">
         var MQTTbroker = '168.138.23.97';//servernya disesuaikan
         var MQTTport = 8090; //sesuaikan port websockets messsage broker,
-        var MQTTsubTopic = 'room/suhu'; //topiknya perlu disesuaikan
+        var MQTTsubTopic = '1941720043/room/suhu'; //topiknya perlu disesuaikan
+        var MQTTsubTopic2 = '1941720043/room/humidity';
+        var MQTTsubTopic3 = '1941720043/room/ldr';
         var chart; // global variuable for chart
         var dataTopics = new Array();
         //mqtt broker
@@ -99,7 +101,7 @@
             chart = new Highcharts.Chart({
                 chart: {
                     renderTo: 'container',
-                    defaultSeriesType: 'solidgauge'
+                    defaultSeriesType: 'spline'
                 },
                 title: {
                     text: 'Dashboard IoT JTI - Suhu Live Websockets'
@@ -122,6 +124,45 @@
                 },
                 series: []
             });
+
+            function plot(point, chartno) {
+            console.log(point);
+
+            var series = chart.series[0],
+                shift = series.data.length > 20; // shift if the series is
+            // longer than 20
+            // add the point
+            chart.series[chartno].addPoint(point, true, shift);
+        };
+        //settings for the chart
+        $(document).ready(function() {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',
+                    defaultSeriesType: 'spline'
+                },
+                title: {
+                    text: 'Dashboard IoT JTI - Suhu Live Websockets'
+                },
+                subtitle: {
+                    text: 'broker: ' + MQTTbroker + ' | port: ' + MQTTport + ' | topic : ' + MQTTsubTopic2
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 50,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                series: []
+            });
+        });
         });
     </script>
     <script src="http://code.highcharts.com/stock/highstock.js"></script>
